@@ -63,7 +63,9 @@ WORKDIR /tmp/
 # Download and install Mellanox OFED 4.2.1 for Ubuntu 16.04
 RUN wget http://content.mellanox.com/ofed/${MOFED_SITE_PLACE}/${MOFED_IMAGE} && \
         tar -xzvf ${MOFED_IMAGE}
-RUN  ${MOFED_DIR}/mlnxofedinstall --user-space-only --force --without-fw-update --all -q && \
-        cd .. && \
-        rm -rf ${MOFED_DIR} && \
-        rm -rf *.tgz
+RUN  ${MOFED_DIR}/mlnxofedinstall --user-space-only --force --without-fw-update --all -q 
+
+#&& \
+#        cd .. && \
+#        rm -rf ${MOFED_DIR} && \
+#        rm -rf *.tgz
